@@ -106,14 +106,14 @@ class lexikonDriver(chromeWebDriver):
         list_alphabetlinks = []
 
         for anker in self.cd.get_all_fields_by_xpath(self.__xpath_subcat_container):
-            list_alphabetlinks.add(self.cd.set_url(anker.get_attribute('href')))
+            list_alphabetlinks.add(anker.get_attribute('href'))
 
         for link in list_alphabetlinks:
             self.cd.set_url(link)
             for li in self.cd.get_all_fields_by_xpath(self.__xpath_link_animal):
                 print(li.get_attribute('href'))
 
-                
+
 
 
 
